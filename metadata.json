@@ -1,0 +1,6 @@
+{
+  "name": "LILACS Lab - University of Minnesota",
+  "description": "Literacy, Language, and Content Learning in Education Sciences (LILACS) Lab at the University of Minnesota, directed by Dr. HyeJin Hwang.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
