@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   const [showScrollCue, setShowScrollCue] = useState(true);
@@ -149,40 +150,6 @@ export const AboutPage: React.FC = () => {
           width: min(92%, 1140px);
         }
 
-        /* Bottom Fixed Scroll Cue */
-        .ref-scroll-cue {
-          position: fixed;
-          left: 50%;
-          bottom: 14px;
-          transform: translateX(-50%);
-          z-index: 30;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 36px;
-          height: 32px;
-          color: #8c8c93;
-          cursor: pointer;
-          background: transparent;
-          border: none;
-          border-radius: 8px;
-          transition: color .2s, background-color .2s, opacity .2s;
-        }
-
-        .ref-scroll-cue svg {
-          width: 20px;
-          height: 20px;
-          fill: none;
-          stroke: currentColor;
-          stroke-width: 1.8;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-        }
-
-        .ref-scroll-cue:hover {
-          color: #9174bc;
-          background: #f0eaf7;
-        }
 
         @media (max-width: 650px) {
           .ref-about-main .about-intro {
@@ -313,19 +280,24 @@ export const AboutPage: React.FC = () => {
           </section>
         </div>
 
-        {/* Floating scroll cue chevron matching reference site */}
-        {showScrollCue && (
+        {/* Floating scroll cue chevron matching Explore research projects page */}
+        <div
+          className={`fixed bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-30 transition-all duration-300 ease-out ${
+            showScrollCue
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 pointer-events-none translate-y-2'
+          }`}
+        >
           <button
             type="button"
             onClick={scrollToPrinciples}
-            className="ref-scroll-cue"
-            aria-label="Scroll to more content"
+            className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-stone-200/90 bg-white hover:border-[#7542b3]/40 hover:bg-[#f1e7fa]/40 text-[#736e79] hover:text-[#7542b3] transition-all cursor-pointer select-none group shadow-2xs"
+            aria-label="Scroll down to Guiding Principles"
+            title="Guiding Principles"
           >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
+            <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
           </button>
-        )}
+        </div>
       </main>
     </>
   );

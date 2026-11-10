@@ -297,7 +297,7 @@ export const TeamPage: React.FC = () => {
                   <img
                     src={member.cardPhoto || member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover object-[center_35%] min-h-[280px] lg:h-[48svh] lg:max-h-[500px] brightness-[1.04]"
+                    className="w-full h-full object-cover object-[center_35%] min-h-[280px] lg:h-[48svh] lg:max-h-[500px]"
                   />
                 </div>
 

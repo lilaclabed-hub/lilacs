@@ -85,9 +85,7 @@ export const MemberProfile: React.FC = () => {
             <img
               src={member.photo}
               alt={member.name}
-              className={`w-full object-cover rounded-2xl block border border-stone-200/80 shadow-2xs ${
-                member.id === 'yulu-sun' ? 'brightness-[1.04]' : ''
-              }`}
+              className="w-full object-cover rounded-2xl block border border-stone-200/80 shadow-2xs"
               style={{
                 aspectRatio: '4 / 4.6',
                 objectPosition: member.photoPosition || (member.id === 'yoojeong-son' ? '35% 35%' : 'center 35%'),
