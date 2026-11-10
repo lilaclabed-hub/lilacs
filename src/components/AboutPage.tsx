@@ -145,8 +145,8 @@ export const AboutPage: React.FC = () => {
           scroll-margin-top: 100px;
           padding: clamp(32px, 6vh, 64px) 0 96px;
           margin-inline: auto !important;
-          max-width: 960px;
-          width: 100%;
+          max-width: 1140px;
+          width: min(92%, 1140px);
         }
 
         /* Bottom Fixed Scroll Cue */
@@ -242,7 +242,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           {/* Section 2: Guiding Principles for Our Work */}
-          <section id="guiding-principles" className="principles max-w-[960px] mx-auto w-full min-h-[calc(100svh-120px)] flex flex-col justify-center">
+          <section id="guiding-principles" className="principles w-[min(92%,1140px)] mx-auto min-h-[calc(100svh-120px)] flex flex-col justify-center">
             <div className="border-b border-stone-200 pb-3 mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
                 Guiding Principles for Our Work:

@@ -80,10 +80,10 @@ export const TeamPage: React.FC = () => {
 
   return (
     <div className="relative bg-[#faf9fc] text-stone-900 pb-16 lg:pb-6">
-      {/* Desktop Floating Member Nav matching reference site (isolated in right 16vw gutter) */}
+      {/* Desktop Floating Member Nav matching reference site (isolated in right gutter) */}
       <nav
         aria-label="Team members"
-        className="fixed right-2 sm:right-3 xl:right-6 2xl:right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-1 bg-white/95 backdrop-blur-md p-2 rounded-2xl border border-[#e8e4ec] shadow-[0_5px_18px_rgba(48,33,60,0.06)] w-[140px] xl:w-[152px]"
+        className="fixed right-2 sm:right-3 xl:right-6 2xl:right-8 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-1 bg-white/95 backdrop-blur-md p-2 rounded-2xl border border-[#e8e4ec] shadow-[0_5px_18px_rgba(48,33,60,0.06)] w-[140px] xl:w-[148px]"
       >
         {navItems.map((item, idx) => {
           const isActive = activeSection === idx;
@@ -109,10 +109,10 @@ export const TeamPage: React.FC = () => {
         })}
       </nav>
 
-      {/* Mobile/Tablet Floating Member Nav matching reference site (@media(max-width:1099px)) */}
+      {/* Mobile/Tablet/Smaller Laptop Floating Member Nav */}
       <nav
         aria-label="Team members"
-        className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 flex lg:hidden items-center gap-1 bg-white/95 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-[#e8e4ec] shadow-[0_4px_20px_rgba(48,33,60,0.1)] max-w-[calc(100%-24px)] overflow-x-auto"
+        className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 flex xl:hidden items-center gap-1 bg-white/95 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-[#e8e4ec] shadow-[0_4px_20px_rgba(48,33,60,0.1)] max-w-[calc(100%-24px)] overflow-x-auto"
       >
         {navItems.map((item, idx) => {
           const isActive = activeSection === idx;
@@ -139,7 +139,7 @@ export const TeamPage: React.FC = () => {
           id="sec-director"
           className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-5 sm:py-6 lg:py-8 px-4 sm:px-6 relative border-b border-stone-200/60"
         >
-          <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-3 sm:space-y-4">
+          <div className="w-[min(92%,1160px)] mx-auto space-y-3 sm:space-y-4">
             <div className="border-b border-stone-200 pb-2.5">
               <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
                 Lab Director
@@ -218,7 +218,7 @@ export const TeamPage: React.FC = () => {
           id="sec-coordinator"
           className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-5 sm:py-6 lg:py-8 px-4 sm:px-6 relative border-b border-stone-200/60"
         >
-          <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-3 sm:space-y-4">
+          <div className="w-[min(92%,1160px)] mx-auto space-y-3 sm:space-y-4">
             <div className="border-b border-stone-200 pb-2.5">
               <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
                 Lab Coordinator
@@ -285,7 +285,7 @@ export const TeamPage: React.FC = () => {
             id={`sec-${member.id}`}
             className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-5 sm:py-6 lg:py-8 px-4 sm:px-6 relative border-b border-stone-200/60"
           >
-            <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-3 sm:space-y-4">
+            <div className="w-[min(92%,1160px)] mx-auto space-y-3 sm:space-y-4">
               <div className="border-b border-stone-200 pb-2.5">
                 <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
                   Ph.D. Student
@@ -362,7 +362,7 @@ export const TeamPage: React.FC = () => {
               id={`sec-${member.id}`}
               className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-5 sm:py-6 lg:py-8 px-4 sm:px-6 relative border-b border-stone-200/60"
             >
-              <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-3 sm:space-y-4">
+              <div className="w-[min(92%,1160px)] mx-auto space-y-3 sm:space-y-4">
                 <div className="border-b border-stone-200 pb-2.5">
                   <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
                     Master’s Student
@@ -431,7 +431,7 @@ export const TeamPage: React.FC = () => {
           id="sec-collaborators"
           className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-8 lg:py-12 px-4 sm:px-6 relative bg-white"
         >
-          <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-8">
+          <div className="w-[min(92%,1160px)] mx-auto space-y-8">
             <div className="border-b border-stone-200 pb-3">
               <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
                 Collaborating Labs & Scholars

@@ -4,9 +4,9 @@ import { LAB_INFO } from '../data/labData';
 
 export const ContactPage: React.FC = () => {
   return (
-    <div className="min-h-[calc(100svh-80px)] bg-white text-[#1d1d1f] flex flex-col justify-center items-center py-12 sm:py-16 px-8 sm:px-14 md:px-20 lg:px-28 xl:px-36">
+    <div className="min-h-[calc(100svh-80px)] bg-white text-[#1d1d1f] flex flex-col justify-start items-center pt-8 sm:pt-10 lg:pt-14 pb-16 px-6 sm:px-10 lg:px-16">
       {/* Centered container with spacious left/right margins */}
-      <main className="w-full max-w-[820px] mx-auto flex flex-col justify-center space-y-8 sm:space-y-10">
+      <main className="w-full max-w-[820px] mx-auto flex flex-col space-y-7 sm:space-y-8">
         {/* Section Intro */}
         <div className="space-y-4">
           <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#7542b3] uppercase">
@@ -58,9 +58,11 @@ export const ContactPage: React.FC = () => {
           </h2>
 
           <div className="space-y-3 text-[15px] sm:text-[16px] lg:text-[16.5px] text-[#45414b] leading-[1.5]">
-            <p className="m-0 xl:whitespace-nowrap">
-              More information on the graduate program in the Department of Educational Psychology can be found on the{' '}
-              <span className="inline-block whitespace-nowrap">
+            <p className="m-0 leading-relaxed">
+              More information on the graduate program in the Department of Educational Psychology can be found
+              <br />
+              <span className="inline-flex items-center gap-1">
+                <span>on the </span>
                 <a
                   href="https://edpsych.umn.edu/academics"
                   target="_blank"
@@ -70,11 +72,11 @@ export const ContactPage: React.FC = () => {
                   <span>department website</span>
                   <span className="text-xs font-semibold" aria-hidden="true">↗</span>
                 </a>
-                .
+                <span>.</span>
               </span>
             </p>
 
-            <p className="m-0 text-[#45414b]">
+            <p className="m-0 text-[#45414b] pt-3 sm:pt-3.5">
               Dr. Hwang is affiliated with the Psychological Foundations of Education/Learning Technology (primary program) and Special Education (secondary program).
             </p>
 

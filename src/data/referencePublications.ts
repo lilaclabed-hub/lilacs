@@ -10,7 +10,7 @@ export interface ReferencePublication {
 export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   {
     "year": "2026",
-    "cover": "/assets/covers/learning-and-individual-differences.jpg",
+    "cover": "./assets/covers/learning-and-individual-differences.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:qUcmZB5y_30C",
     "title": "Understanding individual and media differences in kindergarteners' video-based inference-making",
     "authorsRaw": "<span class=\"lab-author\" >Seohyeon Choi</span>, Kristen L McMaster, <span class=\"lab-author\" >HyeJin Hwang</span>, Nana Kim, Emily A Reno, Ali Fulsher, Jechun An, Manjary Guha, Susan Slater, Reagan Mergen, Eleonora Pizzigallo, Panayiota Kendeou",
@@ -18,7 +18,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2026",
-    "cover": "/assets/journal_covers/jslhr.png",
+    "cover": "./assets/journal_covers/jslhr.png",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:hC7cP41nSMkC",
     "title": "Working memory profiles of English monolinguals and Spanish–English bilinguals",
     "authorsRaw": "Y Shen, <span class=\"lab-author\" >HJ Hwang</span>",
@@ -34,7 +34,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2026",
-    "cover": "/assets/covers/discourse-processes.jpg",
+    "cover": "./assets/covers/discourse-processes.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:ZeXyd9-uunAC",
     "title": "The effect of a refutational text on K-1 students’ knowledge revision on a science topic",
     "authorsRaw": "<span class=\"lab-author\" >H Hwang</span>, K Burger, J Kim",
@@ -42,7 +42,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2025",
-    "cover": "/assets/covers/reading-and-writing.jpg",
+    "cover": "./assets/covers/reading-and-writing.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:L8Ckcad2t8MC",
     "title": "Bidirectional relations of reading with social studies and science domain knowledge among Korean students",
     "authorsRaw": "<span class=\"lab-author\" >HJ Hwang</span>, <span class=\"lab-author\" >YJ Son</span>, JE Relyea, H Jeon",
@@ -66,7 +66,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2024",
-    "cover": "/assets/journal_covers/jep.png",
+    "cover": "./assets/journal_covers/jep.png",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:Wp0gIr-vW9MC",
     "title": "Impact of a content-rich literacy curriculum on kindergarteners’ vocabulary, listening comprehension, and content knowledge.",
     "authorsRaw": "Sonia Q Cabell, James S Kim, Thomas G White, Charles J Gale, Ashley A Edwards, <span class=\"lab-author\" >HyeJin Hwang</span>, Yaacov Petscher, Rhonda M Raines",
@@ -106,7 +106,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2023",
-    "cover": "/assets/journal_covers/rp.png",
+    "cover": "./assets/journal_covers/rp.png",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:ufrVoPGSRksC",
     "title": "Does Cultivating Content Knowledge during Literacy Instruction Support Vocabulary and Comprehension in the Elementary School Years? A Systematic Review",
     "authorsRaw": "<span class=\"lab-author\" >HJ Hwang</span>, CQ Sonia, J Rachel",
@@ -122,7 +122,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2023",
-    "cover": "/assets/covers/reading-and-writing.jpg",
+    "cover": "./assets/covers/reading-and-writing.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:_FxGoFyzp5QC",
     "title": "Supporting inference-making during COVID-19 through individualized scaffolding and feedback: a natural experiment",
     "authorsRaw": "J Kim, J Burey, <span class=\"lab-author\" >HJ Hwang</span>, K McMaster, P Kendeou",
@@ -138,7 +138,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2023",
-    "cover": "/assets/journal_covers/rrq.png",
+    "cover": "./assets/journal_covers/rrq.png",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:WF5omc3nYNoC",
     "title": "A Longitudinal Investigation of Directional Relations Between Domain Knowledge and Reading in the Elementary Years",
     "authorsRaw": "<span class=\"lab-author\" >HJ Hwang</span>, KL McMaster, P Kendeou",
@@ -186,7 +186,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2020",
-    "cover": "/assets/journal_covers/rrq.png",
+    "cover": "./assets/journal_covers/rrq.png",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:qjMakFHDy7sC",
     "title": "Building content knowledge to boost comprehension in the primary grades",
     "authorsRaw": "SQ Cabell, <span class=\"lab-author\" >HJ Hwang</span>",
@@ -194,7 +194,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2020",
-    "cover": "/assets/journal_covers/esj.png",
+    "cover": "./assets/journal_covers/esj.png",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:9yKSN-GCB0IC",
     "title": "Early general knowledge predicts English reading growth in bilingual and monolingual students throughout the elementary years",
     "authorsRaw": "<span class=\"lab-author\" >HJ Hwang</span>",
@@ -202,7 +202,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2020",
-    "cover": "/assets/covers/aera-open.jpg",
+    "cover": "./assets/covers/aera-open.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:W7OEmFMy1HYC",
     "title": "Content counts and motivation matters: Reading comprehension in third-grade students who are English learners",
     "authorsRaw": "<span class=\"lab-author\" >HJ Hwang</span>, NK Duke",
@@ -226,7 +226,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2019",
-    "cover": "/assets/covers/learning-and-individual-differences.jpg",
+    "cover": "./assets/covers/learning-and-individual-differences.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:u5HHmVD_uO8C",
     "title": "The role of science domain knowledge and reading motivation in predicting informational and narrative reading comprehension in L1 and L2: An international study",
     "authorsRaw": "<span class=\"lab-author\" >HJ Hwang</span>",
@@ -250,7 +250,7 @@ export const REFERENCE_PUBLICATIONS: ReferencePublication[] = [
   },
   {
     "year": "2016",
-    "cover": "/assets/covers/reading-and-writing.jpg",
+    "cover": "./assets/covers/reading-and-writing.jpg",
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=awkmUXgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=awkmUXgAAAAJ:UeHWp8X0CEIC",
     "title": "Conceptual coherence, comprehension, and vocabulary acquisition: A knowledge effect?",
     "authorsRaw": "GN Cervetti, TS Wright, <span class=\"lab-author\" >HJ Hwang</span>",

@@ -16,10 +16,11 @@ export const PublicationsPage: React.FC = () => {
       setPublications(REFERENCE_PUBLICATIONS);
       const nowStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       setLastSyncedTime(`Today, ${nowStr}`);
-      localStorage.setItem('lilacs_publications_cache_v3', JSON.stringify(REFERENCE_PUBLICATIONS));
+      localStorage.setItem('lilacs_publications_cache_v4', JSON.stringify(REFERENCE_PUBLICATIONS));
       localStorage.setItem('lilacs_publications_synced_at', `Today, ${nowStr}`);
       // Clean up legacy cache keys that may contain 404 image URLs
       localStorage.removeItem('lilacs_publications_cache');
+      localStorage.removeItem('lilacs_publications_cache_v3');
     } catch {
       // fallback
     }
@@ -190,7 +191,7 @@ export const PublicationsPage: React.FC = () => {
                     title={`View citation on Google Scholar`}
                   >
                     <img
-                      src={pub.cover}
+                      src={pub.cover.startsWith('/') ? `.${pub.cover}` : pub.cover}
                       alt={`${pub.journal || 'Journal'} Cover`}
                       className="w-12 h-auto max-h-[72px] object-contain rounded-xs shadow-2xs border border-stone-200/80"
                       loading="lazy"
