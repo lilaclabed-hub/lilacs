@@ -4,7 +4,7 @@ import { Building2 } from 'lucide-react';
 import {
   TEAM_MEMBERS,
   COLLABORATING_LABS,
-  ALUMNI_MEMBERS,
+  ALUMNI_COLLABORATORS,
   COLLABORATORS,
 } from '../data/labData';
 
@@ -17,23 +17,16 @@ export const TeamPage: React.FC = () => {
   const phdStudents = TEAM_MEMBERS.filter((m) => m.category === 'phd');
   const masterStudents = TEAM_MEMBERS.filter((m) => m.category === 'master');
 
-  const jianjian = masterStudents.find((m) => m.id === 'jianjian-wu') || masterStudents[0];
-  const kiera = masterStudents.find((m) => m.id === 'kiera-rosenberg') || masterStudents[1];
-
   const navItems = [
     { label: 'HyeJin', id: 'sec-director' },
     { label: 'YooJeong', id: 'sec-coordinator' },
     ...phdStudents.map((m) => ({ label: m.name.split(' ')[0], id: `sec-${m.id}` })),
-    { label: 'Jianjian', id: 'sec-jianjian' },
-    { label: 'Kiera', id: 'sec-kiera' },
+    ...masterStudents.map((m) => ({ label: m.name.split(' ')[0], id: `sec-${m.id}` })),
     { label: 'Collaborators', id: 'sec-collaborators' },
   ];
 
   const manualLockRef = useRef<number | null>(null);
   const manualTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const jianjianIdx = navItems.findIndex((n) => n.id === 'sec-jianjian');
-  const kieraIdx = navItems.findIndex((n) => n.id === 'sec-kiera');
-
   // Accurate Scroll Spy matching visible section
   useEffect(() => {
     const handleScroll = () => {
@@ -47,12 +40,7 @@ export const TeamPage: React.FC = () => {
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= targetPoint && rect.bottom >= targetPoint) {
-            // Keep Kiera selected if user previously navigated/switched to Kiera within masters row
-            if (i === jianjianIdx && activeSection === kieraIdx) {
-              matchedIdx = kieraIdx;
-            } else {
-              matchedIdx = i;
-            }
+            matchedIdx = i;
             break;
           }
         }
@@ -63,7 +51,7 @@ export const TeamPage: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection, jianjianIdx, kieraIdx]);
+  }, []);
 
   const scrollToSection = (id: string, targetIdx?: number) => {
     if (typeof targetIdx === 'number') {
@@ -75,16 +63,10 @@ export const TeamPage: React.FC = () => {
       }, 1400);
     }
 
-    // Scroll to the masters section container when clicking Jianjian (or Kiera on desktop)
-    // so the Master’s Students section header and top of the cards are never cut off
-    let targetId = id;
-    if (id === 'sec-jianjian') {
-      targetId = 'sec-masters';
-    } else if (id === 'sec-kiera' && typeof window !== 'undefined' && window.innerWidth >= 768) {
-      targetId = 'sec-masters';
-    }
-
-    const element = document.getElementById(targetId);
+    const element =
+      document.getElementById(id) ||
+      (id === 'sec-jianjian' ? document.getElementById('sec-jianjian-wu') : null) ||
+      (id === 'sec-kiera' ? document.getElementById('sec-kiera-rosenberg') : null);
     if (element) {
       // Offset for sticky navigation bar (approx 80px)
       const navOffset = 80;
@@ -353,9 +335,9 @@ export const TeamPage: React.FC = () => {
               {/* Next Member Arrow */}
               <div className="flex justify-center pt-2">
                 <button
-                  onClick={() => scrollToSection('sec-masters')}
+                  onClick={() => scrollToSection('sec-jianjian-wu')}
                   className="flex items-center justify-center min-h-[32px] text-[28px] leading-none text-[#9b96a1] hover:text-[#7542b3] transition-colors cursor-pointer select-none"
-                  aria-label="Next: Master’s Students"
+                  aria-label="Next: Jianjian"
                 >
                   <span aria-hidden="true">⌄</span>
                 </button>
@@ -364,104 +346,85 @@ export const TeamPage: React.FC = () => {
           </section>
         ))}
 
-        {/* 4. Master’s students: 1 row, 2 columns - fits comfortably within one screen without over-cropping */}
-        <section
-          id="sec-masters"
-          className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-4 sm:py-5 px-4 sm:px-6 relative border-b border-stone-200/60"
-        >
-          <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-3 sm:space-y-3.5">
-            <div className="border-b border-stone-200 pb-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                Master’s Students
-              </h2>
-            </div>
+        {/* 4. Master’s students: 1 person per row matching Ph.D. student & Lab Coordinator cards */}
+        {masterStudents.map((member, mIdx) => {
+          const isLastMaster = mIdx === masterStudents.length - 1;
+          const nextTargetId = isLastMaster
+            ? 'sec-collaborators'
+            : `sec-${masterStudents[mIdx + 1].id}`;
+          const nextLabel = isLastMaster
+            ? 'Collaborating labs & scholars'
+            : masterStudents[mIdx + 1].name.split(' ')[0];
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
-              {/* Jianjian Wu */}
-              <div
-                id="sec-jianjian"
-                className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs flex flex-col"
-              >
-                <div className="bg-[#f8f6fa] overflow-hidden shrink-0 aspect-[16/10] max-h-[210px] sm:max-h-[230px]">
-                  <img
-                    src={jianjian.cardPhoto || jianjian.photo}
-                    alt={jianjian.name}
-                    className="w-full h-full object-cover object-[center_44%]"
-                  />
+          return (
+            <section
+              key={member.id}
+              id={`sec-${member.id}`}
+              className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-5 sm:py-6 lg:py-8 px-4 sm:px-6 relative border-b border-stone-200/60"
+            >
+              <div className="w-[92%] lg:w-[74vw] xl:w-[68vw] max-w-[1140px] mx-auto space-y-3 sm:space-y-4">
+                <div className="border-b border-stone-200 pb-2.5">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+                    Master’s Student
+                  </h2>
                 </div>
-                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3">
-                  <div className="space-y-1.5">
-                    <span className="text-xs sm:text-sm text-[#7542b3] font-semibold block">
-                      Master’s student
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-stone-900 tracking-tight leading-tight">
-                      {jianjian.name}
-                    </h3>
-                    <blockquote className="italic text-base sm:text-lg lg:text-xl text-stone-800 leading-relaxed font-normal">
-                      “{jianjian.oneSentence}”
-                    </blockquote>
+
+                <div className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs grid grid-cols-1 lg:grid-cols-[41.7%_1fr]">
+                  <div className="bg-stone-50 overflow-hidden flex items-center justify-center">
+                    <img
+                      src={member.cardPhoto || member.photo}
+                      alt={member.name}
+                      className={`w-full h-full object-cover min-h-[280px] lg:h-[48svh] lg:max-h-[500px] ${
+                        member.id === 'jianjian-wu' ? 'object-[center_42%]' : 'object-[center_35%]'
+                      }`}
+                    />
                   </div>
-                  <div className="pt-3 border-t border-stone-200/80 flex items-center justify-between text-sm sm:text-base">
-                    <button
-                      onClick={() => navigate(`/team/${jianjian.id}`)}
-                      className="inline-flex items-center gap-1 font-semibold text-[#7542b3] hover:underline cursor-pointer"
-                    >
-                      <span>Meet Jianjian</span>
-                      <span className="text-sm" aria-hidden="true">↗</span>
-                    </button>
+
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-4">
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-xs sm:text-sm text-[#7542b3] font-semibold block mb-1">
+                          Master’s student
+                        </span>
+                        <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-stone-900 tracking-tight leading-tight">
+                          {member.name}
+                        </h3>
+                        <p className="text-sm sm:text-base text-stone-600 mt-1 font-normal">
+                          Department of Educational Psychology · University of Minnesota
+                        </p>
+                      </div>
+
+                      <blockquote className="italic text-base sm:text-lg lg:text-xl text-stone-800 leading-relaxed pt-2 font-normal">
+                        “{member.oneSentence}”
+                      </blockquote>
+                    </div>
+
+                    <div className="pt-4 border-t border-stone-200/80 flex items-center gap-6 text-sm sm:text-base">
+                      <button
+                        onClick={() => navigate(`/team/${member.id}`)}
+                        className="inline-flex items-center gap-1.5 font-semibold text-[#7542b3] hover:underline cursor-pointer"
+                      >
+                        <span>Meet {member.name.split(' ')[0]}</span>
+                        <span className="text-sm" aria-hidden="true">↗</span>
+                      </button>
+                    </div>
                   </div>
+                </div>
+
+                {/* Next Member Arrow */}
+                <div className="flex justify-center pt-2">
+                  <button
+                    onClick={() => scrollToSection(nextTargetId)}
+                    className="flex items-center justify-center min-h-[32px] text-[28px] leading-none text-[#9b96a1] hover:text-[#7542b3] transition-colors cursor-pointer select-none"
+                    aria-label={`Next: ${nextLabel}`}
+                  >
+                    <span aria-hidden="true">⌄</span>
+                  </button>
                 </div>
               </div>
-
-              {/* Kiera Rosenberg */}
-              <div
-                id="sec-kiera"
-                className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs flex flex-col"
-              >
-                <div className="bg-[#f8f6fa] overflow-hidden shrink-0 aspect-[16/10] max-h-[210px] sm:max-h-[230px]">
-                  <img
-                    src={kiera.cardPhoto || kiera.photo}
-                    alt={kiera.name}
-                    className="w-full h-full object-cover object-[center_36%]"
-                  />
-                </div>
-                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3">
-                  <div className="space-y-1.5">
-                    <span className="text-xs sm:text-sm text-[#7542b3] font-semibold block">
-                      Master’s student
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-stone-900 tracking-tight leading-tight">
-                      {kiera.name}
-                    </h3>
-                    <blockquote className="italic text-base sm:text-lg lg:text-xl text-stone-800 leading-relaxed font-normal">
-                      “{kiera.oneSentence}”
-                    </blockquote>
-                  </div>
-                  <div className="pt-3 border-t border-stone-200/80 flex items-center justify-between text-sm sm:text-base">
-                    <button
-                      onClick={() => navigate(`/team/${kiera.id}`)}
-                      className="inline-flex items-center gap-1 font-semibold text-[#7542b3] hover:underline cursor-pointer"
-                    >
-                      <span>Meet Kiera</span>
-                      <span className="text-sm" aria-hidden="true">↗</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Next Member Arrow */}
-            <div className="flex justify-center pt-1.5">
-              <button
-                onClick={() => scrollToSection('sec-collaborators')}
-                className="flex items-center justify-center min-h-[28px] text-[24px] leading-none text-[#9b96a1] hover:text-[#7542b3] transition-colors cursor-pointer select-none"
-                aria-label="Next: Collaborating labs & scholars"
-              >
-                <span aria-hidden="true">⌄</span>
-              </button>
-            </div>
-          </div>
-        </section>
+            </section>
+          );
+        })}
 
         {/* 5. Collaborating labs at UMN & Alumni & Collaborators */}
         <section
@@ -536,13 +499,13 @@ export const TeamPage: React.FC = () => {
                 Alumni & Collaborators
               </h2>
 
-              {/* Alumni Subsection */}
+              {/* Alumni Collaborators Subsection */}
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-stone-900">
-                  Alumni
+                  Alumni Collaborators
                 </h3>
                 <ul className="space-y-2.5 text-base sm:text-[17px] text-stone-800 leading-relaxed pl-5 list-disc">
-                  {ALUMNI_MEMBERS.map((alumnus, idx) => (
+                  {ALUMNI_COLLABORATORS.map((alumnus, idx) => (
                     <li key={idx} className="pl-1">
                       {alumnus.link ? (
                         <a
@@ -556,8 +519,13 @@ export const TeamPage: React.FC = () => {
                       ) : (
                         <span>{alumnus.name}</span>
                       )}
-                      {alumnus.title && ` – ${alumnus.title}`}
-                      {alumnus.affiliation && ` at ${alumnus.affiliation}`}
+                      {alumnus.title && alumnus.affiliation
+                        ? ` – ${alumnus.title}, ${alumnus.affiliation}`
+                        : alumnus.affiliation
+                        ? ` – ${alumnus.affiliation}`
+                        : alumnus.title
+                        ? ` – ${alumnus.title}`
+                        : ''}
                     </li>
                   ))}
                 </ul>

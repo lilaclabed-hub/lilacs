@@ -377,13 +377,13 @@ export const COLLABORATING_LABS: CollaboratorLab[] = [
   {
     name: 'R+L Lab',
     subName: '(Reading + Learning Lab)',
-    directorOrCoord: 'Directed by Dr. Panayiota (Pani) Kendeou',
+    directorOrCoord: 'Directed by Dr. Panayiota (Pani) Kendeou (Distinguished McKnight University Professor & Guy Bond Chair in Reading)',
     affiliation: 'University of Minnesota',
     link: 'https://edpsych.umn.edu/research/labs/reading-learning',
   },
   {
     name: 'McMaster Lab',
-    directorOrCoord: 'Directed by Dr. Kristen McMaster',
+    directorOrCoord: 'Directed by Dr. Kristen L. McMaster (Professor & Guy Bond Chair in Reading)',
     affiliation: 'University of Minnesota',
     link: 'https://edpsych.umn.edu/research/labs/kristen-mcmaster',
   },
@@ -395,7 +395,13 @@ export const COLLABORATING_LABS: CollaboratorLab[] = [
   },
 ];
 
-export const ALUMNI_MEMBERS: CollaboratorPerson[] = [
+export const ALUMNI_COLLABORATORS: CollaboratorPerson[] = [
+  {
+    name: 'Seohyeon Choi, Ph.D.',
+    title: 'Assistant Professor',
+    affiliation: 'Sungkyunkwan University',
+    link: 'https://professor.skku.edu/eng_child/faculty.do?mode=view&perId=LZStrPIJQTgHgZgKgogOzAagKYGECsAOAqgW3QCNsALAVwEEBeaoA+',
+  },
   {
     name: 'Christopher Blommel',
     title: 'Teacher',
@@ -403,69 +409,65 @@ export const ALUMNI_MEMBERS: CollaboratorPerson[] = [
   },
 ];
 
+export const ALUMNI_MEMBERS = ALUMNI_COLLABORATORS;
+
 export const COLLABORATORS: CollaboratorPerson[] = [
   {
-    name: 'Seohyeon Choi, Ph.D.',
-    title: 'Assistant Professor of Child Psychology & Education',
-    affiliation: 'Sungkyunkwan University in South Korea',
-    link: 'https://professor.skku.edu/eng_child/faculty.do?mode=view&perId=LZStrPIJQTgHgZgKgogOzAagKYGECsAOAqgW3QCNsALAVwEEBeaoA+',
-  },
-  {
-    name: 'Jechun An, Ph.D.',
-    title: 'Postdoctoral Researcher',
+    name: 'Je Chun An, Ph.D.',
+    title: 'Postdoctoral Scholar',
     affiliation: 'Stanford University',
     link: 'https://profiles.stanford.edu/je-chun-an',
   },
   {
     name: 'Yewon Kang',
-    title: 'Ph.D. candidate',
+    title: 'Ph.D. Candidate',
     affiliation: 'University of Minnesota',
   },
   {
-    name: 'Crystal Wise, Ph.D.',
+    name: 'Crystal N. Wise, Ph.D.',
     title: 'Assistant Professor',
     affiliation: 'University of Minnesota',
     link: 'https://ci.umn.edu/crystal-wise',
   },
   {
-    name: 'Laura Allen, Ph.D.',
-    title: 'Associate Professor',
+    name: 'Laura K. Allen, Ph.D.',
+    title: 'Associate Professor & Bonnie Westby Huebner Endowed Chair in Education and Technology',
     affiliation: 'University of Minnesota',
     link: 'https://edpsych.umn.edu/laura-allen',
   },
   {
-    name: 'Sonia Cabell, Ph.D.',
-    title: 'Associate Professor',
+    name: 'Sonia Q. Cabell, Ph.D.',
+    title: 'R. Keith and Patricia Duggins Sigmon Endowed Professor',
     affiliation: 'Florida State University',
     link: 'https://annescollege.fsu.edu/faculty-staff/dr-sonia-cabell',
   },
   {
-    name: 'Liz Hadley, Ph.D.',
+    name: 'Elizabeth Burke Hadley, Ph.D.',
     title: 'Associate Professor',
-    affiliation: 'University of Florida',
-    link: 'https://education.ufl.edu/faculty/hadley-elizabeth/',
+    affiliation: 'University of South Florida',
+    link: 'https://www.usf.edu/education/faculty-staff/faculty-directory/hadley-elizabeth.aspx',
   },
   {
-    name: 'Jackie Relyea, Ph.D.',
+    name: 'Jackie Eunjung Relyea, Ph.D.',
     title: 'Associate Professor',
     affiliation: 'North Carolina State University',
     link: 'https://ced.ncsu.edu/people/jrelyea/',
   },
   {
-    name: 'Miranda Fitzgerald, Ph.D.',
-    title: 'Assistant Professor',
-    affiliation: 'North Carolina State University',
+    name: 'Miranda S. Fitzgerald, Ph.D.',
+    title: 'Associate Professor',
+    affiliation: 'University of North Carolina at Charlotte',
     link: 'https://education.charlotte.edu/miranda-fitzgerald/',
   },
   {
     name: 'Courtney Hattan, Ph.D.',
-    title: 'Assistant Professor',
+    title: 'Assistant Professor & Donald G. Tarbet Faculty Scholar in Education',
     affiliation: 'University of North Carolina at Chapel Hill',
     link: 'https://ed.unc.edu/people/courtney-hattan/',
   },
   {
     name: 'Sungyoon Lee, Ph.D.',
-    title: 'Assistant Professor',
+    title: 'Associate Professor',
     affiliation: 'Middle Tennessee State University',
     link: 'https://w1.mtsu.edu/faculty/sungyoon-lee',
   },
