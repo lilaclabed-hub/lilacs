@@ -297,7 +297,7 @@ export const TeamPage: React.FC = () => {
                   <img
                     src={member.cardPhoto || member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover object-[center_35%] min-h-[280px] lg:h-[48svh] lg:max-h-[500px]"
+                    className="w-full h-full object-cover object-[center_35%] min-h-[280px] lg:h-[48svh] lg:max-h-[500px] brightness-[1.04]"
                   />
                 </div>
 
@@ -363,11 +363,13 @@ export const TeamPage: React.FC = () => {
               className="min-h-[calc(100vh-80px)] scroll-mt-20 flex flex-col justify-center py-5 sm:py-6 lg:py-8 px-4 sm:px-6 relative border-b border-stone-200/60"
             >
               <div className="w-[min(92%,1160px)] mx-auto space-y-3 sm:space-y-4">
-                <div className="border-b border-stone-200 pb-2.5">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                    Master’s Student
-                  </h2>
-                </div>
+                {mIdx === 0 && (
+                  <div className="border-b border-stone-200 pb-2.5">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+                      Master’s Students
+                    </h2>
+                  </div>
+                )}
 
                 <div className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs grid grid-cols-1 lg:grid-cols-[41.7%_1fr]">
                   <div className="bg-stone-50 overflow-hidden flex items-center justify-center">
