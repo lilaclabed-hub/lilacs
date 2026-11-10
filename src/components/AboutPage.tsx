@@ -75,10 +75,12 @@ export const AboutPage: React.FC = () => {
         }
 
         .ref-about-main .about-intro > .eyebrow {
-          font-size: 14px;
-          color: #686870;
-          margin: 0 0 4px;
+          font-size: 14.5px;
+          color: #8e75ad;
+          margin: 0 0 6px;
           font-weight: 400;
+          letter-spacing: 0.01em;
+          text-transform: none;
         }
 
         .ref-about-main .about-intro > h1 {
@@ -167,7 +169,9 @@ export const AboutPage: React.FC = () => {
         <div className="pdf-document about-document">
           {/* Section 1: About Intro (What We Do) */}
           <div className="about-intro">
-            <p className="eyebrow">Learn more about the lab</p>
+            <p className="eyebrow text-[14px] sm:text-[15px] font-normal text-[#8e75ad] tracking-normal mb-1.5">
+              Learn more about the lab
+            </p>
             <h1>What We Do:</h1>
 
             <ul className="pdf-list">

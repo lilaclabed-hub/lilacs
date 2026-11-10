@@ -9,7 +9,7 @@ export const ContactPage: React.FC = () => {
       <main className="w-full max-w-[820px] mx-auto flex flex-col space-y-7 sm:space-y-8">
         {/* Section Intro */}
         <div className="space-y-4">
-          <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#7542b3] uppercase">
+          <p className="text-[14px] sm:text-[15px] font-normal text-[#8e75ad] tracking-normal mb-1">
             Contact information
           </p>
 

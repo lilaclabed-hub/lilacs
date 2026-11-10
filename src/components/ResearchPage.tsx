@@ -131,7 +131,7 @@ export const ResearchPage: React.FC = () => {
           {/* Header Block with Apple-style floating text entrance */}
           <div>
             <p
-              className={`text-xs sm:text-sm font-semibold tracking-wider text-[#7542b3] uppercase mb-1 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`text-[14px] sm:text-[15px] font-normal text-[#8e75ad] tracking-normal mb-1.5 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
               style={{ transitionDelay: '80ms' }}
