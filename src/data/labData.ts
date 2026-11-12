@@ -103,8 +103,8 @@ export const LAB_INFO = {
   ],
   guidingPrinciples: [
     {
-      title: 'Reading comprehension as both processes and products',
-      desc: 'We view reading comprehension as both processes and products. We investigate not only the final outcome of what students comprehend, but also the active, cognitive strategies they employ while engaging with various texts.',
+      title: 'Reading comprehension as both processes and outcomes',
+      desc: 'We view reading comprehension as both processes and outcomes. We investigate not only the final outcome of what students comprehend, but also the active, cognitive strategies they employ while engaging with various texts.',
     },
     {
       title: 'Reading as a fundamental vehicle for learning and growth',

@@ -228,7 +228,7 @@ export const AboutPage: React.FC = () => {
                 </span>
                 <div className="space-y-1.5 flex-1">
                   <h3 className="text-lg sm:text-[19px] font-bold text-stone-900 leading-snug">
-                    We view reading comprehension as both processes and products.
+                    We view reading comprehension as both processes and outcomes.
                   </h3>
                   <p className="text-base sm:text-[17px] text-stone-700 leading-relaxed font-normal">
                     We investigate not only the final outcome of what students comprehend, but also the active, cognitive strategies they employ while engaging with various texts.
